@@ -56,10 +56,11 @@
 | 32 | [Common DSA Problem Patterns](#common-dsa-problem-patterns) |
 | 33 | [DSA Cheat Sheet](#dsa-cheat-sheet) |
 | 34 | [Applications of All Structures](#applications-of-all-structures) |
+| 35 | [Suggested Study Plan](#suggested-study-plan) |
 
 ---
 
-## 🧠 What is an Algorithm?
+## What is an Algorithm?
 
 **Q: What is an algorithm?**
 
@@ -76,7 +77,7 @@ An algorithm is a finite, well-defined sequence of instructions or steps used to
 
 ---
 
-## 🗂️ What is a Data Structure?
+## What is a Data Structure?
 
 **Q: What is a data structure?**
 
@@ -91,7 +92,7 @@ A data structure is a way of organizing, storing, and managing data in memory so
 
 ---
 
-## 💾 Memory Allocation & Memory Leak
+## Memory Allocation & Memory Leak
 
 **Q: What is memory allocation?**
 
@@ -130,7 +131,7 @@ function store(key, value) {
 
 ---
 
-## 🛡️ How to Prevent Memory Leaks
+## How to Prevent Memory Leaks
 
 **Q: How do you prevent memory leaks?**
 
@@ -144,7 +145,7 @@ function store(key, value) {
 
 ---
 
-## 📊 Complexity Analysis
+## Complexity Analysis
 
 **Q: What is complexity analysis?**
 
@@ -158,7 +159,7 @@ Complexity is expressed as a function of input size `n`, using Big-O notation.
 
 ---
 
-## 📈 Asymptotic Analysis & Big-O Notation
+## Asymptotic Analysis & Big-O Notation
 
 **Q: What is asymptotic analysis?**
 
@@ -184,7 +185,7 @@ Big-O notation expresses the upper bound (worst-case) of an algorithm's growth r
 
 ---
 
-## ⏱️ Time Complexity — Best, Average & Worst Cases
+## Time Complexity — Best, Average & Worst Cases
 
 **Q: What are best, average, and worst case complexities?**
 
@@ -207,7 +208,7 @@ Worst-case complexity gives a guaranteed upper bound on performance. In producti
 
 ---
 
-## ⚔️ Divide and Conquer Algorithm
+## Divide and Conquer Algorithm
 
 **Q: What is divide and conquer?**
 
@@ -228,7 +229,7 @@ Divide and conquer is an algorithm design paradigm that works by recursively bre
 
 ---
 
-## 🔍 Linear Search vs Binary Search
+## Linear Search vs Binary Search
 
 **Q: What is linear search?**
 
@@ -276,7 +277,7 @@ function binarySearch(arr, target) {
 
 ---
 
-## 🌐 Linear vs Non-Linear Data Structures
+## Linear vs Non-Linear Data Structures
 
 **Q: What is the difference between linear and non-linear data structures?**
 
@@ -290,7 +291,7 @@ function binarySearch(arr, target) {
 
 ---
 
-## 🎯 Applications of Binary Search
+## Applications of Binary Search
 
 **Q: What are the real-world applications of binary search?**
 
@@ -305,7 +306,7 @@ function binarySearch(arr, target) {
 
 ---
 
-## 🧩 Array Types
+## Array Types
 
 **Q: What is a Jagged Array?**
 
@@ -342,7 +343,7 @@ const hetero = [1, "hello", true, null, { key: "value" }];
 
 ---
 
-## 🔄 What is Recursion?
+## What is Recursion?
 
 **Q: What is recursion?**
 
@@ -369,7 +370,7 @@ function factorial(n) {
 
 ---
 
-## 🌀 Applications of Recursion
+## Applications of Recursion
 
 **Q: What are the applications of recursion?**
 
@@ -386,7 +387,7 @@ function factorial(n) {
 
 ---
 
-## 📦 Stack
+## Stack
 
 **Q: What is a Stack?**
 
@@ -550,7 +551,7 @@ console.log(nextGreaterElement([4, 5, 2, 10, 8])); // [5, 10, 10, -1, -1]
 
 ---
 
-## 🔗 Linked List
+## Linked List
 
 **Q: What is a linked list and what are its applications?**
 
@@ -591,7 +592,7 @@ A linked list is a linear data structure where elements (called **nodes**) are s
 
 ---
 
-## ↔️ Doubly Linked List
+## Doubly Linked List
 
 **Q: What is a doubly linked list?**
 
@@ -610,7 +611,7 @@ null ← [10 | ↔] ↔ [20 | ↔] ↔ [30 | null]
 
 ---
 
-## 🔁 Circular Linked List
+## Circular Linked List
 
 **Q: What is a circular linked list?**
 
@@ -630,7 +631,7 @@ Can be singly or doubly circular.
 
 ---
 
-## ⚖️ Linked List vs Array
+## Linked List vs Array
 
 | Feature | Array | Linked List |
 |---|---|---|
@@ -645,7 +646,7 @@ Can be singly or doubly circular.
 
 ---
 
-## 💪 Linked List Operations — Sample Workouts
+## Linked List Operations — Sample Workouts
 
 ### 1. Construction of Singly & Doubly Linked List
 
@@ -798,7 +799,7 @@ class DoublyLinkedList {
 
 ---
 
-## 🔤 String Concepts & Sample Workouts
+## String Concepts & Sample Workouts
 
 **Q: What are key string concepts in DSA?**
 
@@ -855,7 +856,7 @@ console.log(charFrequency("hello")); // { h:1, e:1, l:2, o:1 }
 
 ---
 
-## 🔎 Linear Search — Sample Workouts
+## Linear Search — Sample Workouts
 
 ### Sample Workout 1 — Basic linear search
 
@@ -903,7 +904,7 @@ console.log(linearSearch2D(matrix, 5)); // [1, 1]
 
 ---
 
-## 🔀 Iterative vs Recursive Binary Search
+## Iterative vs Recursive Binary Search
 
 **Q: Which is better — iterative or recursive binary search, and why?**
 
@@ -970,7 +971,7 @@ For an array of 1 billion elements, recursive binary search makes at most **~30 
 
 ---
 
-## 🎯 Binary Search — Sample Workouts
+## Binary Search — Sample Workouts
 
 ### Sample Workout 1 — Iterative binary search
 
@@ -1028,7 +1029,7 @@ console.log(sqrtBinarySearch(10)); // 3 (floor)
 
 ---
 
-## 🌀 Recursion — Sample Workouts
+## Recursion — Sample Workouts
 
 ### Sample Workout 1 — Fibonacci sequence
 
@@ -1076,7 +1077,7 @@ console.log(flattenArray([1, [2, [3, [4]], 5]])); // [1, 2, 3, 4, 5]
 
 ---
 
-## 📦 Stack — Sample Workouts
+## Stack — Sample Workouts
 
 ### Sample Workout 1 — Evaluate a postfix expression
 
@@ -1169,7 +1170,7 @@ console.log(ms.getMin()); // 3
 
 ---
 
-## 🧮 Space Complexity
+## Space Complexity
 
 **Q: What is space complexity?**
 
@@ -1196,7 +1197,7 @@ Often you can reduce time complexity by using more memory, or reduce memory usag
 
 ---
 
-## 🐍 Tail Recursion
+## Tail Recursion
 
 **Q: What is tail recursion?**
 
@@ -1224,7 +1225,7 @@ console.log(factorialTail(5)); // 120
 
 ---
 
-## 👆👆 Two Pointer Technique
+## Two Pointer Technique
 
 **Q: What is the two pointer technique?**
 
@@ -1276,7 +1277,7 @@ function hasCycle(head) {
 
 ---
 
-## 🔃 Sorting Algorithms Overview
+## Sorting Algorithms Overview
 
 **Q: What are the most important sorting algorithms and how do they compare?**
 
@@ -1369,7 +1370,7 @@ console.log(quickSort([5, 3, 8, 1, 9, 2])); // [1, 2, 3, 5, 8, 9]
 
 ---
 
-## 🚶 Queue
+## Queue
 
 **Q: What is a Queue?**
 
@@ -1480,7 +1481,7 @@ function levelOrder(root) {
 
 ---
 
-## 🧠 Common DSA Problem Patterns
+## Common DSA Problem Patterns
 
 **Q: What are the most common patterns used to solve DSA problems?**
 
@@ -1625,7 +1626,7 @@ DFS: use recursion (or explicit stack), go deep first
 
 ---
 
-## 📝 DSA Cheat Sheet
+## DSA Cheat Sheet
 
 ### Big-O Quick Reference
 
@@ -1706,7 +1707,7 @@ return -1; // not found
 
 ---
 
-## 🌍 Applications of All Structures
+## Applications of All Structures
 
 | Data Structure | Real-World Applications |
 |---|---|
@@ -1725,7 +1726,7 @@ return -1; // not found
 
 ---
 
-## 🗓️ Suggested Study Plan
+## Suggested Study Plan
 
 | Week | Topics |
 |---|---|
