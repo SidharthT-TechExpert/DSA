@@ -29,8 +29,9 @@ A comprehensive Q&A reference covering DSA fundamentals, memory management, comp
 21. [String Concepts & Sample Workouts](#string-concepts--sample-workouts)
 22. [Linear Search — Sample Workouts](#linear-search--sample-workouts)
 23. [Binary Search — Sample Workouts](#binary-search--sample-workouts)
-24. [Recursion — Sample Workouts](#recursion--sample-workouts)
-25. [Stack — Sample Workouts](#stack--sample-workouts)
+24. [Iterative vs Recursive Binary Search](#iterative-vs-recursive-binary-search)
+25. [Recursion — Sample Workouts](#recursion--sample-workouts)
+26. [Stack — Sample Workouts](#stack--sample-workouts)
 26. [Space Complexity](#space-complexity)
 27. [Tail Recursion](#tail-recursion)
 28. [Two Pointer Technique](#two-pointer-technique)
@@ -879,6 +880,73 @@ function linearSearch2D(matrix, target) {
 const matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 console.log(linearSearch2D(matrix, 5)); // [1, 1]
 ```
+
+---
+
+## Iterative vs Recursive Binary Search
+
+**Q: Which is better — iterative or recursive binary search, and why?**
+
+Both produce the correct result with the same O(log n) time complexity. The difference is in **memory usage and performance**.
+
+### Iterative
+
+```js
+function binarySearchIterative(arr, target) {
+    let left = 0, right = arr.length - 1;
+
+    while (left <= right) {
+        const mid = Math.floor((left + right) / 2);
+        if (arr[mid] === target) return mid;
+        else if (arr[mid] < target) left = mid + 1;
+        else right = mid - 1;
+    }
+    return -1;
+}
+```
+
+### Recursive
+
+```js
+function binarySearchRecursive(arr, target, left = 0, right = arr.length - 1) {
+    if (left > right) return -1;  // base case
+
+    const mid = Math.floor((left + right) / 2);
+    if (arr[mid] === target) return mid;
+    else if (arr[mid] < target) return binarySearchRecursive(arr, target, mid + 1, right);
+    else return binarySearchRecursive(arr, target, left, mid - 1);
+}
+```
+
+### Head-to-head comparison
+
+| Factor | Iterative | Recursive |
+|---|---|---|
+| **Time complexity** | O(log n) | O(log n) |
+| **Space complexity** | **O(1)** ✅ | O(log n) — call stack |
+| **Stack overflow risk** | None | Possible on huge inputs |
+| **Performance** | Faster — no function call overhead | Slightly slower |
+| **Readability** | Clear and straightforward | Elegant but adds mental overhead |
+| **Industry standard** | Yes ✅ | Less common for arrays |
+
+### Why iterative wins for binary search on arrays
+
+The logic is identical — both eliminate half the search space each step. The only real difference is **where the state lives**: iterative keeps `left` and `right` as plain variables, recursive pushes a new stack frame for each call.
+
+For an array of 1 billion elements, recursive binary search makes at most **~30 calls** (log₂ 1,000,000,000 ≈ 30), so stack overflow is not a real danger. But iterative is still preferred because:
+
+1. **O(1) space** — no call stack usage at all, strictly better than O(log n)
+2. **No function call overhead** — each recursive call has setup and teardown cost
+3. **Industry standard** — most production code and standard libraries use the iterative version
+4. **Predictable performance** — no risk of hitting runtime recursion limits
+
+### When recursive binary search makes sense
+
+- Working on a **BST (Binary Search Tree)** — the tree structure is naturally recursive, so recursion fits perfectly
+- Language has **tail call optimization** (Haskell, some Scheme implementations) — the recursive call gets optimized into a loop anyway
+- **Teaching / explaining** divide and conquer — the recursive version makes the "split in half" idea more visually obvious
+
+**Bottom line:** For a flat sorted array, always use iterative. For tree-based binary search (BST traversal, segment trees), recursion is the natural and right choice.
 
 ---
 
