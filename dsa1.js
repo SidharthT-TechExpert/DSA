@@ -31,3 +31,23 @@ function isPalindrome(str, start = 0, end = str.length - 1) {
     return isPalindrome(str, start + 1, end - 1);
 }
 
+function fibonacci(n) {
+    if (n <= 1) return n;
+
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+function feb(n) {
+    if (n <= 1) return n;
+
+    let prev = 0;
+    let curr = 1;
+
+    for (let i = 2; i <= n; i++) {
+        let next = prev + curr;
+        prev = curr;
+        curr = next;
+    }
+
+    return curr;
+}
