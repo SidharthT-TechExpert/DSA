@@ -51,3 +51,12 @@ function feb(n) {
 
     return curr;
 }
+
+function maxElement(arr, index = 0) {
+    if(index === arr.length -1 ) return arr[index];
+
+    
+}
+
+
+console.log(maxElement([4, 8, 2, 10, 6]));
