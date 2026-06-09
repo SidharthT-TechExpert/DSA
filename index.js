@@ -29,9 +29,7 @@ function reverseWords(str) {
     return str.split(' ').map(word => reverseStr(word)).join(' ');
 }
 
-//console.log(reverseWords('Hello World'));//olleH dlroW
-
-
+console.log(reverseWords('Hello World'));//olleH dlroW
 
 const arr = [1, 2, 3, 4, 5, 6];
 
@@ -108,7 +106,7 @@ class Node {
 class LinkedList {
     constructor() {
         this.head = null;
-        this.size = 0;
+        this.size = 0;__
     }
 
     prepend(value) {
