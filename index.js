@@ -90,9 +90,6 @@ const prime = (n, start = Math.floor(Math.sqrt(n))) => {
 
 console.log("Is prime:", prime(11));
 
-
-
-
 //Linked List
 
 class Node {

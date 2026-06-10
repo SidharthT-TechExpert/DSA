@@ -64,9 +64,3 @@ function charCodeAddK(str, k) {
 
     return String.fromCharCode(str.charCodeAt(0) + k) + charCodeAddK(str.slice(1), k);
 }
-
-
-console.log(charCodeAddK('abc', 2)); // abc defg
-
-console.log(power(2, 3));
-console.log(factorial(5));
