@@ -135,15 +135,19 @@ class LinkedList {
     }
 
     print() {
+
         if (this.isEmpty()) {
             return console.log("This is empty list!");
         }
+
         let curr = this.head;
         let list = '';
+
         while (curr) {
             list += `${curr.value} `;
             curr = curr.next;
         }
+
         console.log(list);
     }
 
@@ -238,6 +242,7 @@ class LinkedList {
         this.head = prev;
 
     }
+    
     isEmpty() {
         return this.size === 0;
     }
