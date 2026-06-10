@@ -4,7 +4,6 @@ function factorial(num) {
     return num * factorial(num - 1);
 }
 
-
 function power(num, pow) {
     if (pow <= 0) return 1;
 
@@ -53,10 +52,21 @@ function feb(n) {
 }
 
 function maxElement(arr, index = 0) {
-    if(index === arr.length -1 ) return arr[index];
+    if (index === arr.length - 1) return arr[index];
 
-    
+    // recursive case
+    let maxRate = maxElement(arr, index + 1);
+    return arr[index] > maxRate ? arr[index] : maxRate;
+}
+
+function charCodeAddK(str, k) {
+    if (str.length === 0) return '';
+
+    return String.fromCharCode(str.charCodeAt(0) + k) + charCodeAddK(str.slice(1), k);
 }
 
 
-console.log(maxElement([4, 8, 2, 10, 6]));
+console.log(charCodeAddK('abc', 2)); // abc defg
+
+console.log(power(2, 3));
+console.log(factorial(5));
