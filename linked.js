@@ -78,20 +78,52 @@ class LinkedList {
         this.size--;
     }
 
-    findMid(){
+    findMidR() {
         let slow = this.head;
         let fast = this.head.next;
         let prev = null;
 
-        while(fast && fast.next){
+        while (fast && fast.next) {
             prev = slow;
             slow = slow.next;
             fast = fast.next.next
         }
 
-        console.log(prev);
-        console.log(slow)
         prev.next = prev.next.next;
+    }
+
+    remove(value) {
+        if (this.isEmpty()) {
+            return console.log("This is empty list!");
+        }
+
+        let curr = this.head;
+
+        while (curr) {
+            if (curr.value === value) {
+                curr.value = curr.next.value;
+                curr.next = curr.next.next;
+                this.size--;
+                return;
+            }
+            curr = curr.next;
+        }
+        console.log("Value not found!");
+    }
+
+    reverse() {
+        let prev = null;
+        let curr = this.head;
+
+        while (curr) {
+            let next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        this.head = prev;
+
     }
 
     isEmpty() {
@@ -110,10 +142,5 @@ list.preappend(3)
 list.append(30)
 
 list.print();
-
-list.removeL();
+list.reverse();
 list.print();
-
-list.findMid()
-
-list.print()
