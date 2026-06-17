@@ -1,4 +1,4 @@
-let arr = [5, 2, 9, 1, 5, 6];
+let arr = [10, 2, 9, 1, 5, 6];
 
 // Bubble sort 
 function bubbleSort(ar) {
@@ -31,13 +31,16 @@ function SelectionSort(ar) {
 }
 
 //Insertion Sort
+// 4 5 2 1
+//   4
 function InsertionSort(ar) {
     let n = ar.length;
+
     for (let i = 1; i < n; i++) {
         let key = ar[i];
         let j = i - 1;
+        console.log(key,j, ar[j]);
         while (j >= 0 && ar[j] > key) {
-            console.log(ar[j], key)
             ar[j + 1] = ar[j];
             j--;
         }
@@ -62,7 +65,7 @@ function merge(left,right){
     let result = [];
     let i = 0, j = 0;
 
-    // 5 2
+    // 6 3
     while(i < left.length && j < right.length){
         if(left[i] <= right[j]){
             result.push(left[i]);
@@ -72,15 +75,15 @@ function merge(left,right){
             j ++;
         }
     }
+    //[3]
 
     return result.concat(left.slice(i)).concat(right.slice(j));
 
 }
 
 
-
 console.log("Original array:", arr);
-console.log(mergeSort(arr))
+// console.log(mergeSort(arr))
 // console.log(bubbleSort(arr));
-// console.log(SelectionSort(arr));
+console.log(SelectionSort(arr));
 // console.log(InsertionSort(arr));
