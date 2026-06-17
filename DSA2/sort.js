@@ -2,9 +2,9 @@ let arr = [10, 2, 9, 1, 5, 6];
 
 // Bubble sort 
 function bubbleSort(ar) {
-    let n = ar.length;
-    for (let i = 0; i < n - 1; i++) {
-        for (let j = 0; j < n - i - 1; j++) {
+    let n = ar.length - 1;
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n - i; j++) {
             if (ar[j] > ar[j + 1]) {
                 [ar[j], ar[j + 1]] = [ar[j + 1], ar[j]];
             }
@@ -39,7 +39,7 @@ function InsertionSort(ar) {
     for (let i = 1; i < n; i++) {
         let key = ar[i];
         let j = i - 1;
-        console.log(key,j, ar[j]);
+
         while (j >= 0 && ar[j] > key) {
             ar[j + 1] = ar[j];
             j--;
@@ -50,29 +50,29 @@ function InsertionSort(ar) {
 }
 
 //Merge Sort
-function mergeSort(arr){
-    if(arr.length <= 1) return arr;
+function mergeSort(arr) {
+    if (arr.length <= 1) return arr;
 
     let mid = Math.floor(arr.length / 2);
     let left = mergeSort(arr.slice(0, mid));
     let right = mergeSort(arr.slice(mid));
 
-    return merge(left,right);
+    return merge(left, right);
 }
 
-function merge(left,right){
+function merge(left, right) {
     console.log(left, right)
     let result = [];
     let i = 0, j = 0;
 
     // 6 3
-    while(i < left.length && j < right.length){
-        if(left[i] <= right[j]){
+    while (i < left.length && j < right.length) {
+        if (left[i] <= right[j]) {
             result.push(left[i]);
-            i ++;
-        }else{
+            i++;
+        } else {
             result.push(right[j]);
-            j ++;
+            j++;
         }
     }
     //[3]
