@@ -63,11 +63,16 @@ class Queue {
 }
 
 let queue = new Queue();
-queue.enqueue(1)
-queue.enqueue(2)
-queue.enqueue(3)
-queue.enqueue(4)
-queue.display()
-queue.dequeue();
-queue.display()
-queue.peek();
+
+queue.enqueue(1);
+queue.enqueue(2);
+queue.enqueue(3);
+queue.enqueue(4);
+
+queue.display();
+
+console.log("Dequeued:", queue.dequeue());
+
+queue.display();
+
+console.log("Front:", queue.peek());
