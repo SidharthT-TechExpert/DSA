@@ -1,17 +1,40 @@
 let arr = [5, 2, 9, 1, 5, 6];
 
+
+// Swap function to swap two elements in an array
+function swap(arr, a, b) {
+    [arr[a], arr[b]] = [arr[b], arr[a]];
+}
+
 // Bubble sort 
 function bubbleSort(ar) {
     let n = ar.length - 1;
+    let swapped = false;
+
     for (let i = 0; i < n; i++) {
         for (let j = 0; j < n - i; j++) {
             if (ar[j] > ar[j + 1]) {
                 [ar[j], ar[j + 1]] = [ar[j + 1], ar[j]];
+                swapped = true;
             }
         }
     }
+
+    if (!swapped) return ar;
+
     return ar;
 }
+// Time complexity
+// Best case O(n) (with swapped optimization)
+// Average Case O(n^2)
+// Worst Case O(n^2)
+
+// Interview tip: If asked, "When is Bubble Sort O(n)?" the correct answer is:
+
+// When the array is already sorted and the 
+// implementation uses a swapped flag (early termination optimization). 
+// Without this optimization, Bubble Sort is O(n²) even for a sorted array.
+
 
 //Selection   Sort 
 function SelectionSort(ar) {
@@ -97,9 +120,6 @@ function quickSort(arr) {
     return [...quickSort(left), pivot, ...quickSort(right)];
 }
 
-function swap(arr, a, b) {
-    [arr[a], arr[b]] = [arr[b], arr[a]];
-}
 
 function partition(arr, low, high) {
     const pivot = arr[high];
