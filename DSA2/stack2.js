@@ -50,6 +50,46 @@ class Stack {
 
     }
 
+    // Insert an element at the bottom
+
+    insertAtBottom(item) {
+
+        // Base Case
+        if (this.items.length === 0) {
+            this.push(item);
+            return;
+        }
+
+        // Remove top
+        let top = this.pop();
+        console.log('Removed value :', top,this);
+
+        // Recursive call
+        this.insertAtBottom(item);
+
+        // Restore top
+        this.push(top);
+    }
+
+    // Reverse the stack
+    reverseStack() {
+
+        // Base Case
+        if (this.items.length === 0) {
+            return;
+        }
+
+        // Remove top
+        let top = this.pop();
+
+
+        // Reverse remaining stack
+        this.reverseStack();
+
+        // Insert removed element at bottom
+        this.insertAtBottom(top);
+    }
+
     reveseStr(str) {
         let stack = [];
 
@@ -80,5 +120,5 @@ stack.push(2);
 stack.push(3);
 // stack.push(4);
 stack.print()
-stack.removeMid();
+stack.reverseStack();
 stack.print();

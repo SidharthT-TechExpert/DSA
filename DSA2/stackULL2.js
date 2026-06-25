@@ -49,6 +49,49 @@ class Stack {
         console.log(list, 'null')
     }
 
+    removeMid() {
+
+        if (this.isEmpty()) {
+            console.log("Stack Underflow");
+            return;
+        }
+
+        const mid = Math.floor(this.size / 2);
+
+        if (mid === 0) {
+            this.pop();
+            return;
+        }
+
+        let prev = null;
+        let curr = this.head;
+
+        for (let i = 0; i < mid; i++) {
+            prev = curr;
+            curr = curr.next;
+        }
+
+        // Remove middle node
+        prev.next = curr.next;
+
+        this.size--;
+    }
+
+    reverse() {
+        let prev = null;
+        let curr = this.head;
+        let next = null;
+
+        while (curr) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        this.head = prev;
+    }
+
     reveseStr(str) {
         let stack = [];
 
@@ -81,10 +124,9 @@ stack.push(20);
 stack.push(2);
 stack.push(1);
 stack.push(2);
+// stack.push(2);
 stack.print()
-stack.peek();
-stack.pop();
+stack.reverse();
 stack.print()
-stack.peek()
 
 stack.reveseStr('Hello')
