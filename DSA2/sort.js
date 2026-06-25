@@ -144,8 +144,8 @@ function merge(left, right) {
 
     while (i < left.length && j < right.length) {
         if (left[i] <= right[j]) {
-             result.push(left[i++]);
-        }else{
+            result.push(left[i++]);
+        } else {
             result.push(right[j++]);
         }
     }
@@ -157,7 +157,7 @@ function merge(left, right) {
 //Stable 
 // Large DataSet it's effishent 
 
-function quickSort(arr) {
+function quickSortUExArray(arr) {
     if (arr.length <= 1) return arr;
 
     let pivot = arr[arr.length - 1];
@@ -175,31 +175,31 @@ function quickSort(arr) {
     return [...quickSort(left), pivot, ...quickSort(right)];
 }
 
-
-function partition(arr, low, high) {
-    const pivot = arr[high];
-    let i = low - 1;
-
-    for (let j = low; j <= high - 1; j++) {
-        if (arr[j] < pivot) {
-            i++;
-            swap(arr, i, j);
-        }
-    }
-
-    i++;
-    swap(arr, i, high);
-    return i;
-}
-
 function quickSort(arr, low = 0, high = arr.length - 1) {
     if (low < high) {
 
-        const pivot = partition(arr, low, high);
+        let pivot = partition(arr, low, high);
 
         quickSort(arr, low, pivot - 1);
         quickSort(arr, pivot + 1, high);
     }
+
+    return arr;
+}
+
+function partition(ar, low, high) {
+    let pivot = ar[high];
+    let i = low - 1;
+
+    for (let j = low; j < high; j++) {
+        if (pivot > ar[j]) {
+            i++;
+            swap(ar, i, j);
+        }
+    }
+    i++;
+    swap(ar, i, high);
+    return i;
 }
 
 
@@ -214,8 +214,8 @@ function quickSort(arr, low = 0, high = arr.length - 1) {
 
 console.log("Original array:", arr);
 // console.log(mergeSort(arr))
-quickSort(arr)
-console.log("Quick Sort Result:", arr);
+console.log("Quick Sort Result:", quickSort(arr));
+
 // console.log(bubbleSort(arr));
 // console.log(SelectionSort(arr));
 // console.log(InsertionSort(arr));
