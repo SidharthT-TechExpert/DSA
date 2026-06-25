@@ -127,14 +127,13 @@ function InsertionSort(ar) {
 //Stable 
 
 //Merge Sort
-function mergeSort(arr) {
-    console.log("Merge Sort called with:", arr);
-    if (arr.length <= 1) return arr;
+function mergeSort(ar) {
+    if (ar.length <= 1) return ar;
 
-    let mid = Math.floor(arr.length / 2);
-    console.log("Mid:", mid);
-    let left = mergeSort(arr.slice(0, mid));
-    let right = mergeSort(arr.slice(mid));
+    let mid = Math.floor(ar.length / 2);
+
+    let left = mergeSort(ar.slice(0, mid));
+    let right = mergeSort(ar.slice(mid));
 
     return merge(left, right);
 }
@@ -145,16 +144,18 @@ function merge(left, right) {
 
     while (i < left.length && j < right.length) {
         if (left[i] <= right[j]) {
-            result.push(left[i]);
-            i++;
-        } else {
-            result.push(right[j]);
-            j++;
+             result.push(left[i++]);
+        }else{
+            result.push(right[j++]);
         }
     }
 
     return result.concat(left.slice(i)).concat(right.slice(j));
 }
+// Time Complexity all case O(n log(n))
+//Space Complexity O(n)
+//Stable 
+// Large DataSet it's effishent 
 
 function quickSort(arr) {
     if (arr.length <= 1) return arr;
