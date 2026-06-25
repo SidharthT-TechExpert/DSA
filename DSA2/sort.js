@@ -7,26 +7,50 @@ function swap(arr, a, b) {
 }
 
 // Bubble sort 
-function bubbleSort(ar) {
-    let n = ar.length - 1;
-    let swapped = false;
+// function bubbleSort(ar) {
+//     let n = ar.length - 1;
+//     let swapped = false;
 
-    for (let i = 0; i < n; i++) {
-        for (let j = 0; j < n - i; j++) {
-            if (ar[j] > ar[j + 1]) {
-                [ar[j], ar[j + 1]] = [ar[j + 1], ar[j]];
-                swapped = true;
+//     for (let i = 0; i < n; i++) {
+//         for (let j = 0; j < n - i; j++) {
+//             if (ar[j] > ar[j + 1]) {
+//                 [ar[j], ar[j + 1]] = [ar[j + 1], ar[j]];
+//                 swapped = true;
+//             }
+//         }
+
+
+
+//         if (!swapped) break; // If no two elements were swapped by inner loop, then break;
+
+
+//     }
+
+
+//     return ar;
+// }
+
+function bubbleSort(ar) {
+    let n = ar.length;
+
+    while (n > 1) {
+        let lastSwap = 0;
+        for (let i = 1; i < n; i++) {
+            if (ar[i - 1] > ar[i]) {
+                swap(ar, i, i - 1);
+                lastSwap = i;
             }
         }
+        n = lastSwap;
+        console.log(n);
     }
-
-    if (!swapped) return ar;
-
     return ar;
 }
+
+
 // Time complexity
 // Best case O(n) (with swapped optimization)
-// Average Case O(n^2)
+// Average Case O(n^2) with lastSwap reduce unwanted Comparison then reduce litle bit time complexity comparing to normal or swapped flag 
 // Worst Case O(n^2)
 
 // Interview tip: If asked, "When is Bubble Sort O(n)?" the correct answer is:
@@ -37,25 +61,49 @@ function bubbleSort(ar) {
 
 
 //Selection   Sort 
-function SelectionSort(ar) {
+function selectionSort(ar) {
     let n = ar.length;
+
     for (let i = 0; i < n - 1; i++) {
         let minIndex = i;
+
         for (let j = i + 1; j < n; j++) {
-            if (ar[j] < ar[minIndex]) {
+            if (ar[minIndex] > ar[j]) {
                 minIndex = j;
             }
         }
-        if (minIndex !== i) {
-            [ar[i], ar[minIndex]] = [ar[minIndex], ar[i]];
+
+        if (minIndex != i) {
+            swap(ar, i, minIndex);
         }
     }
+
     return ar;
 }
+// Interview Answer
+
+// Complexity:
+
+// Best: O(n²)
+// Average: O(n²)
+// Worst: O(n²)
+// Space: O(1)
+
+// Advantages:
+
+// Simple to implement
+// Constant extra space
+// Fewer swaps than Bubble Sort
+// Good for small arrays
+
+// Disadvantages:
+
+// Slow for large datasets
+// Best case is still O(n²)
+// Not stable by default
+// Less efficient than O(n log n) algorithms like Merge Sort and Quick Sort
 
 //Insertion Sort
-// 4 5 2 1
-//   4
 function InsertionSort(ar) {
     let n = ar.length;
 
@@ -67,10 +115,16 @@ function InsertionSort(ar) {
             ar[j + 1] = ar[j];
             j--;
         }
+
         ar[j + 1] = key;
     }
+
     return ar;
 }
+// best case O(n);
+// worst case O(n^2);
+//Space comp O(1);
+//Stable 
 
 //Merge Sort
 function mergeSort(arr) {
