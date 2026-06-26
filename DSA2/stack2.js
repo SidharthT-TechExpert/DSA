@@ -107,6 +107,17 @@ class Stack {
 
     }
 
+    reverse(){
+     let stack = new Stack();
+
+     while(this.items.length > 0){
+        stack.push(this.pop());
+     }
+
+     this.items = stack.items;
+
+     console.log('Reversed stack:', this.items);
+    }
 
     print(value) {
         return console.log(this.items);
@@ -120,5 +131,5 @@ stack.push(2);
 stack.push(3);
 // stack.push(4);
 stack.print()
-stack.reverseStack();
+stack.reverse();
 stack.print();

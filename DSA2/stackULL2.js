@@ -31,8 +31,11 @@ class Stack {
             return console.log('Errro: Stack Underflow')
         }
 
+        let rmValue = this.head.value;
+
         this.head = this.head.next;
         this.size--;
+        return rmValue;
     }
 
     peek() {
@@ -77,20 +80,42 @@ class Stack {
         this.size--;
     }
 
+    // reverse() {
+    //     let prev = null;
+    //     let next = null;
+    //     let curr = this.head;
+
+    //     while (curr) {
+    //         next = curr.next;
+    //         curr.next = prev;
+    //         prev = curr;
+    //         curr = next;
+    //     }
+
+    //     this.head = prev;
+    // }
+    // Time Complexity: O(n) && Space Complexity: O(1)
+
     reverse() {
-        let prev = null;
+        let stack = new Stack();
         let curr = this.head;
-        let next = null;
 
         while (curr) {
-            next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
+            stack.push(curr);
+            curr = curr.next;
         }
 
-        this.head = prev;
+        this.head = stack.pop();
+        curr = this.head;
+
+        while (!stack.isEmpty()) {
+            curr.next = stack.pop();
+            curr = curr.next;
+        }
+
+        curr.next = null;
     }
+    // Time Complexity: O(n) && Space Complexity: O(n)
 
     reveseStr(str) {
         let stack = [];
