@@ -37,6 +37,7 @@ queue.enqueue(2);
 queue.enqueue(3);
 queue.enqueue(4);
 
+
 queue.display();
 
 console.log("Dequeued:", queue.dequeue());

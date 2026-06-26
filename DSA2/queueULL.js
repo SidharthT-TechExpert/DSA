@@ -17,12 +17,11 @@ class Queue {
 
         if (this.isEmpty()) {
             this.front = node;
-            this.rear = node;
         } else {
             this.rear.next = node
-            this.rear = node;
         }
-
+        
+        this.rear = node;
         this.size++;
     }
 
